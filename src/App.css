@@ -38,6 +38,7 @@
 }
 
 .conversationContainer {
+  padding-left: 2%;
   width: 40%;
 }
 
@@ -45,10 +46,46 @@
   color: blueviolet;
   background: rgb(197, 197, 245);
   padding: 7px;
+  position: relative;
+	border-radius: .4em;
+}
+
+.user:after {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-left-color: rgb(197, 197, 245);
+	border-right: 0;
+	border-bottom: 0;
+	margin-top: -10px;
+	margin-right: -20px;
 }
 
 .bot {
   color: rgb(38, 105, 29);
   background: rgb(187, 228, 169);
   padding: 7px;
+  border-radius: .4em;
+  position: relative;
+
 }
+
+.bot:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-right-color: rgb(187, 228, 169);
+	border-left: 0;
+	border-top: 0;
+	margin-top: -10px;
+	margin-left: -20px;
+}
+
