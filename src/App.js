@@ -8,16 +8,24 @@ class App extends Component {
   state = {
     value: ""
   };
-
   onChange = event => {
     const { value } = event.target;
     this.setState({ value });
   };
   
+  onSubmit = event => {
+    const sendMessage = this.props.sendMessage;
+    const inputText = event.target.value;
+    if (event.keyCode === 13) {
+      this.setState({value : ""});
+      return sendMessage(inputText);
+    }
+  }
+
   styledText = [];
 
   render() {
-    const { feed, sendMessage } = this.props;
+    const { feed } = this.props;
     let hasFrench = false;
     this.styledText = feed.map((entry, index) => {
       if (entry.text.includes("French" && entry.sender === 'bot')) {
@@ -35,9 +43,6 @@ class App extends Component {
         <div className="conversationContainer">
         <ul>
           {this.styledText}
-          {/* {feed.map(entry => (
-            <li>{entry.text}</li>
-          ))} */}
         </ul>
         {hasFrench ? (
           <img
@@ -47,10 +52,9 @@ class App extends Component {
         ) : null}
         <input
           type="text"
+          value={this.state.value}
           onChange={this.onChange}
-          onKeyDown={e => 
-            e.keyCode === 13 ? sendMessage(e.target.value) : null
-          }
+          onKeyDown={this.onSubmit}
         />
         </div>
         {/* <iframe width="350" height="430" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/2d1dbf29-77f7-4d06-a36e-4269708e262b"></iframe> */}
