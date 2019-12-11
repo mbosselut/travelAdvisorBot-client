@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+.conversationContainer {
+  width: 40%;
+}
+
+.user {
+  color: blueviolet;
+  background: rgb(197, 197, 245);
+  padding: 7px;
+}
+
+.bot {
+  color: rgb(38, 105, 29);
+  background: rgb(187, 228, 169);
+  padding: 7px;
+}
