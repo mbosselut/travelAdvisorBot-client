@@ -6,12 +6,14 @@ import "./images.js";
 import Conversation from "./components/Conversation";
 import Gallery from "./components/Gallery";
 import { images } from "./images.js";
+import {CSSTransition} from 'react-transition-group';
 
 class App extends Component {
   state = {
     value: "",
     pictureList: [],
-    loadPics: false
+    loadPics: false,
+    showGallery: false
   };
 
   galleryClasses = "gallery";
@@ -32,8 +34,8 @@ class App extends Component {
 
   loadPictures = (country) => {
     if (this.state.loadPics === false) {
-      this.setState({pictureList: images.find(element => element.country == country).pictures, loadPics: true});
-      this.galleryClasses = "gallery gallery-full";
+      this.setState({pictureList: images.find(element => element.country == country).pictures, loadPics: true, showGallery: true});
+      this.galleryClasses = "gallery-show";
       console.log('loadpics', country)
     }
   }
@@ -71,10 +73,20 @@ class App extends Component {
             onChange={this.onChange}
             onSubmit={this.onSubmit}
           />
+          {/* <CSSTransition
+          in={this.state.showGallery}
+          timeout={400}
+          classNames="list-transition"
+          unmountOnExit
+          appear
+          onEntered={this.listSwitch}
+          onExit={this.listSwitch}
+        > */}
           <Gallery
             galleryClasses={this.galleryClasses}
             pictures={this.state.pictureList}
           />
+          {/* </CSSTransition> */}
         </div>
         {/* <iframe width="350" height="430" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/2d1dbf29-77f7-4d06-a36e-4269708e262b"></iframe> */}
       </div>

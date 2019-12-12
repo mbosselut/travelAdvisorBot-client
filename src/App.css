@@ -39,21 +39,36 @@
 .mainContent {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly
+  justify-content: space-evenly;
 }
 
 .gallery {
   display:flex;
   flex-direction: column;
-  width: 40%;
+  width: 0%;
+  height:80%;
+  opacity:0;
+  -webkit-transition: all 3s;
+  -moz-transition: all 3s;
+  -o-transition: all 3s;
+  visibility: hidden; 
+  transition: all 3s;
+  
 }
 
-.gallery-full {
+.gallery-show {
+  display:flex;
+  flex-direction: column;
+  width: 40%;
+  height:80%;
   align-items: flex-end;
+  opacity:1;
+  visibility: visible; 
+  transition: all 3s;
 }
 
 .picture {
-  width: 75%;
+  width: 50%;
   height: auto;
   object-fit: cover;
 }
@@ -110,3 +125,42 @@
 	margin-left: -20px;
 }
 /* CSS Speech bubbles curtesy of https://leaverou.github.io/bubbly/ */
+
+
+/* This fires as soon as the element enters the dorm */
+/* .list-transition-enter,
+.list-transition-appear {
+  /*We give the list the initial dimension of the list button*/
+  
+  /*top: 0;
+  width: 120px;
+  max-height: 40px;
+  color: transparent;
+  background-color: #5a564c;
+} */
+/* This is where we can add the transition*/
+/* .list-transition-enter-active,
+.list-transition-appear-active {
+  top: 45px;
+  width: 200px;
+  max-height: 200px;
+  background-color: #9e8949;
+  transition: all 400ms;
+} */
+
+/* This fires as soon as the this.state.showList is false */
+/* .list-transition-exit {
+  top: 45px;
+  width: 200px;
+  max-height: 200px;
+  background-color: #9e8949;
+} */
+/* fires as element leaves the DOM*/
+/* .list-transition-exit-active {
+  top: 0;
+  width: 120px;
+  max-height: 40px;
+  color: transparent;
+  background-color: #5a564c;
+  transition: all 400ms;
+} */
