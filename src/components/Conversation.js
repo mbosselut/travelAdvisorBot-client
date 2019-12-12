@@ -9,6 +9,7 @@ const Conversation = (props) => {
               value={props.value}
               onChange={props.onChange}
               onKeyDown={props.onSubmit}
+              placeholder="Type your message here and press Enter to submit"
             />
           </div>
   );

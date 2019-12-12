@@ -13,7 +13,6 @@ const messageMiddleware = () => next => action => {
 
     client.textRequest(text).then(onSuccess);
     function onSuccess(response) {
-      // console.log(response.result.fulfillment.speech);
       next(sendMessage(response.result.fulfillment.speech, "bot"));
     }
   }
