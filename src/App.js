@@ -17,6 +17,7 @@ class App extends Component {
   };
 
   galleryClasses = "gallery";
+  picturesClasses = [];
 
   onChange = event => {
     const { value } = event.target;
@@ -36,6 +37,7 @@ class App extends Component {
     if (this.state.loadPics === false) {
       this.setState({pictureList: images.find(element => element.country == country).pictures, loadPics: true, showGallery: true});
       this.galleryClasses = "gallery-show";
+      this.pictureClasses = ['picture-0', 'picture-1', 'picture-2'];
       console.log('loadpics', country)
     }
   }
@@ -85,6 +87,7 @@ class App extends Component {
           <Gallery
             galleryClasses={this.galleryClasses}
             pictures={this.state.pictureList}
+            pictureClasses={this.pictureClasses}
           />
           {/* </CSSTransition> */}
         </div>

@@ -1,41 +1,3 @@
-/* .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
 .mainContent {
   display: flex;
   flex-direction: row;
@@ -45,7 +7,7 @@
 .gallery {
   display:flex;
   flex-direction: column;
-  width: 0%;
+  width: 40%;
   height:80%;
   opacity:0;
   -webkit-transition: all 3s;
@@ -61,16 +23,41 @@
   flex-direction: column;
   width: 40%;
   height:80%;
-  align-items: flex-end;
   opacity:1;
   visibility: visible; 
   transition: all 3s;
 }
 
 .picture {
-  width: 50%;
+  width: 0%;
+  opacity: 0;
   height: auto;
   object-fit: cover;
+  transition: opacity 3s;
+  margin: 2px;
+  border-radius: 5%;
+}
+
+.picture-0 {
+  opacity: 1;
+  width: 70%;
+  transform: translateX(50px);
+  transition: all 3s ease-in;
+}
+
+.picture-1 {
+  opacity: 1;
+  width: 70%;
+  transform: translateX(80px);
+  transition: all 3s;
+  transition-timing-function: cubic-bezier(.04,1.02,1,1.18);
+}
+
+.picture-2 {
+  opacity: 1;
+  width: 70%;
+  transform: translateX(110px);  
+  transition: all 3s ease-out;
 }
 
 .conversationContainer {

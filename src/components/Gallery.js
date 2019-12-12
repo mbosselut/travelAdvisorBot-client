@@ -1,10 +1,12 @@
 import React from 'react';
 
 const Gallery = (props) => {
-  const pictures = props.pictures ? props.pictures.map(picture => <img src={picture} className='picture'/>) : null;
   return (
     <div className={props.galleryClasses}>
-      {pictures}
+      <img src={props.pictures ? props.pictures[0] : null} className={props.pictureClasses ? `picture ${props.pictureClasses[0]}` : "picture"}/>
+      <img src={props.pictures ? props.pictures[1] : null} className={props.pictureClasses ? `picture ${props.pictureClasses[1]}` : "picture"}/>
+      <img src={props.pictures ? props.pictures[2] : null} className={props.pictureClasses ? `picture ${props.pictureClasses[2]}` : "picture"}/>
+
     </div>
   );
 };
