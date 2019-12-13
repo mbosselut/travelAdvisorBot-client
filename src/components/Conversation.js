@@ -3,7 +3,9 @@ import React from 'react';
 const Conversation = (props) => {
   return (
     <div className="conversationContainer">
-            <ul>{props.text}</ul>
+            <ul>{props.text}
+              {props.lastSender === 'user' ? <li className='bot'><em>Bot typing...</em></li> : null}
+            </ul>
             <input
               type="text"
               value={props.value}
