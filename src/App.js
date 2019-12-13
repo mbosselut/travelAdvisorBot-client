@@ -15,6 +15,7 @@ class App extends Component {
     value: "",
     pictureList: [],
     loadPics: false,
+    country: ""
   };
 
   galleryClasses = "gallery";
@@ -29,7 +30,7 @@ class App extends Component {
     const sendMessage = this.props.sendMessage;
     const inputText = event.target.value;
     if (event.keyCode === 13) {
-      this.setState({ value: ""});
+      this.setState({ value: "" });
       return sendMessage(inputText);
     }
   };
@@ -40,6 +41,7 @@ class App extends Component {
         pictureList: images.find(element => element.country == country)
           .pictures,
         loadPics: true,
+        country:country
       });
       this.galleryClasses = "gallery-show";
       this.pictureClasses = ["picture-0", "picture-1", "picture-2"];
@@ -49,7 +51,7 @@ class App extends Component {
   styledText = [];
 
   render() {
-    const {feed}  = this.props;
+    const { feed } = this.props;
     const { lastSender } = this.props;
     this.styledText = feed.map((entry, index) => {
       if (entry.text.includes("My recommandation") && entry.sender == "bot") {
@@ -69,9 +71,9 @@ class App extends Component {
       <div>
         <h1 className="header">
           Your Travel Advisor bot &nbsp;
-          <FontAwesomeIcon icon={faPlaneDeparture} className='icon'/>&nbsp;
-                    <FontAwesomeIcon icon={faRobot} className='icon'/>
-
+          <FontAwesomeIcon icon={faPlaneDeparture} className="icon" />
+          &nbsp;
+          <FontAwesomeIcon icon={faRobot} className="icon" />
         </h1>
         <div className="mainContent">
           <Conversation
@@ -85,6 +87,8 @@ class App extends Component {
             galleryClasses={this.galleryClasses}
             pictures={this.state.pictureList}
             pictureClasses={this.pictureClasses}
+            loadPics={this.state.loadPics}
+            country={this.state.country}
           />
         </div>
       </div>
