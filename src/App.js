@@ -49,7 +49,8 @@ class App extends Component {
   styledText = [];
 
   render() {
-    const { feed } = this.props;
+    const {feed}  = this.props;
+    const { lastSender } = this.props;
     this.styledText = feed.map((entry, index) => {
       if (entry.text.includes("My recommandation") && entry.sender == "bot") {
         const str = entry.text.split(" ");
@@ -78,6 +79,7 @@ class App extends Component {
             value={this.state.value}
             onChange={this.onChange}
             onSubmit={this.onSubmit}
+            lastSender={lastSender}
           />
           <Gallery
             galleryClasses={this.galleryClasses}
@@ -91,6 +93,7 @@ class App extends Component {
 }
 
 const mapStateToProps = state => ({
-  feed: state
+  feed: state.feed,
+  lastSender: state.lastSender
 });
 export default connect(mapStateToProps, { sendMessage })(App);
