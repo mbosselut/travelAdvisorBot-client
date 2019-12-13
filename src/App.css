@@ -39,7 +39,7 @@ body * {
   display:flex;
   flex-direction: column;
   width: 40%;
-  height:80%;
+  height:80vh;
   opacity:0;
   -webkit-transition: all 3s;
   -moz-transition: all 3s;
@@ -62,33 +62,33 @@ body * {
 .picture {
   width: 0%;
   opacity: 0;
-  height: auto;
+  height: 30%;
   object-fit: cover;
-  transition: opacity 3s;
+  transition: opacity 1.8s;
   margin: 2px;
   border-radius: 5%;
 }
 
 .picture-0 {
   opacity: 1;
-  width: 70%;
+  width: 50%;
   transform: translateX(50px);
-  transition: all 3s ease-in;
+  transition: all 1.8s ease-in;
 }
 
 .picture-1 {
   opacity: 1;
-  width: 70%;
+  width: 50%;
   transform: translateX(80px);
-  transition: all 3s;
+  transition: all 1.8s;
   transition-timing-function: cubic-bezier(.04,1.02,1,1.18);
 }
 
 .picture-2 {
   opacity: 1;
-  width: 70%;
+  width: 50%;
   transform: translateX(110px);  
-  transition: all 3s ease-out;
+  transition: all 1.8s ease-out;
 }
 
 .user {
