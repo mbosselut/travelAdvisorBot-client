@@ -4,7 +4,7 @@
 
 This is the front-end implementation of the Travel Advisor bot. It was programmed in 3,5 days using Dialogflow, for a Codaisseur hackathon themed around Travel. I wanted to experiment with AI and found Dialogflow as an easy way to do it.
 
-The front-end app was built with React & Redux, and connected to the chatbot backend with the api-ai-javascript package.
+The front-end app was built with React & Redux, and connected to the chatbot backend with the api-ai-javascript package. The 'find hotels' and 'other destination' buttons are not functional and only present for the visual aspect.
 
 ## To install :
 `git clone` , `npm install`, `npm start`
