@@ -11,7 +11,9 @@ const Gallery = (props) => {
               <div>
                 <button className="btn">Find hotels in {props.country}</button>
                 <button className="btn">Other destination</button>
+                <p style={{fontSize: "10px"}}><em>NB : Buttons are inactive</em></p>
               </div>
+              
             ) : null}
     </div>
   );
